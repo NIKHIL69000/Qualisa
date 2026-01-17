@@ -7,6 +7,10 @@ interface HeaderProps {
   currentView: ViewState;
 }
 
+interface FooterProps {
+  onNavigate: (view: ViewState) => void;
+}
+
 // Optimized SVG Logo Component
 export const QualisaLogo: React.FC<{ className?: string, colored?: boolean }> = ({ className = "h-8", colored = true }) => (
   <svg viewBox="0 0 150 40" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="Qualisa Logo">
@@ -60,19 +64,21 @@ export const Button: React.FC<{
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
   fullWidth?: boolean;
-}> = ({ children, variant = 'primary', onClick, className = '', fullWidth = false }) => {
-  const baseStyle = "px-6 py-2.5 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 text-sm";
+  disabled?: boolean;
+}> = ({ children, variant = 'primary', onClick, className = '', fullWidth = false, disabled = false }) => {
+  const baseStyle = "px-6 py-2.5 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 text-sm disabled:opacity-60 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-gradient-to-r from-brand-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-brand-500/30 active:scale-95",
-    secondary: "bg-white text-brand-700 border border-slate-200 hover:bg-slate-50 hover:border-brand-200",
-    outline: "border-2 border-white/20 text-white hover:bg-white/10",
-    ghost: "text-slate-600 hover:text-brand-600 hover:bg-brand-50",
+    primary: "bg-gradient-to-r from-brand-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-brand-500/30 active:scale-95 disabled:active:scale-100 disabled:hover:shadow-none",
+    secondary: "bg-white text-brand-700 border border-slate-200 hover:bg-slate-50 hover:border-brand-200 disabled:hover:bg-white disabled:hover:border-slate-200",
+    outline: "border-2 border-white/20 text-white hover:bg-white/10 disabled:hover:bg-transparent",
+    ghost: "text-slate-600 hover:text-brand-600 hover:bg-brand-50 disabled:hover:bg-transparent disabled:hover:text-slate-600",
   };
 
   return (
     <button 
       onClick={onClick} 
+      disabled={disabled}
       className={`${baseStyle} ${variants[variant]} ${fullWidth ? 'w-full' : ''} ${className}`}
     >
       {children}
@@ -163,13 +169,13 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
   );
 };
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <div className="mb-6">
+            <div className="mb-6 cursor-pointer" onClick={() => onNavigate('HOME')}>
               {/* White/colored variant for dark background */}
               <QualisaLogo className="h-9 w-auto" /> 
             </div>
@@ -181,26 +187,45 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold mb-4 text-slate-200">Platform</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Explore Skills</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">How it Works</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Pricing</a></li>
+              <li>
+                <button onClick={() => onNavigate('EXPLORE')} className="hover:text-brand-400 transition-colors text-left">Explore Skills</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('HOW_IT_WORKS')} className="hover:text-brand-400 transition-colors text-left">How it Works</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('PRICING')} className="hover:text-brand-400 transition-colors text-left">Pricing</button>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 text-slate-200">Resources</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Growth Programs</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Success Stories</a></li>
+               <li>
+                <button onClick={() => onNavigate('RESOURCES')} className="hover:text-brand-400 transition-colors text-left">Resource Hub</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('BLOG')} className="hover:text-brand-400 transition-colors text-left">Blog</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('GROWTH')} className="hover:text-brand-400 transition-colors text-left">Growth Programs</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('SUCCESS_STORIES')} className="hover:text-brand-400 transition-colors text-left">Success Stories</button>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 text-slate-200">Legal</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-400 transition-colors">Terms of Service</a></li>
+              <li>
+                <button onClick={() => onNavigate('PRIVACY')} className="hover:text-brand-400 transition-colors text-left">Privacy Policy</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('TERMS')} className="hover:text-brand-400 transition-colors text-left">Terms of Service</button>
+              </li>
             </ul>
           </div>
         </div>

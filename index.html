@@ -53,6 +53,25 @@
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
       }
+      
+      /* Global Input Styling Fix */
+      input, textarea, select {
+        background-color: #ffffff;
+        color: #0f172a; /* slate-900 */
+      }
+      input::placeholder, textarea::placeholder {
+        color: #94a3b8; /* slate-400 */
+        opacity: 1;
+      }
+      
+      /* Ensure text is visible in autofill state (Chrome) */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active{
+          -webkit-box-shadow: 0 0 0 30px white inset !important;
+          -webkit-text-fill-color: #0f172a !important;
+      }
     </style>
   <script type="importmap">
 {
@@ -67,7 +86,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <body class="bg-slate-50 text-slate-900 antialiased min-h-screen bg-[#f8fafc]">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

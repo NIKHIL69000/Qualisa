@@ -7,7 +7,15 @@ export type ViewState =
   | 'LOGIN' 
   | 'SIGNUP' 
   | 'DASHBOARD_TALENT' 
-  | 'DASHBOARD_ADMIN';
+  | 'DASHBOARD_ADMIN'
+  | 'HOW_IT_WORKS'
+  | 'PRICING'
+  | 'BLOG'
+  | 'SUCCESS_STORIES'
+  | 'RESOURCES'
+  | 'PRIVACY'
+  | 'TERMS'
+  | 'NOT_FOUND';
 
 export interface Skill {
   id: string;
