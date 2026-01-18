@@ -180,7 +180,7 @@ export const Profile: React.FC<ProfileProps> = ({ talentId, onNavigate }) => {
                 
                 <div className="text-xs text-slate-400 text-center flex items-center justify-center gap-2">
                   <Shield className="w-3 h-3" /> 
-                  100% Secure Payment via Qualisa
+                  100% Secure Payment via qalisa
                 </div>
               </div>
 

@@ -125,7 +125,7 @@ export const Blog: React.FC<StaticPageProps> = ({ onNavigate }) => {
         <div className="pt-24 pb-12 bg-slate-50 min-h-screen">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-12">
-                    <h1 className="text-4xl font-heading font-bold text-slate-900 mb-4">Qualisa Insights</h1>
+                    <h1 className="text-4xl font-heading font-bold text-slate-900 mb-4">qalisa Insights</h1>
                     <p className="text-slate-600 text-lg">Expert advice on career growth, hiring strategies, and the future of work.</p>
                 </div>
 
@@ -184,7 +184,7 @@ export const SuccessStories: React.FC<StaticPageProps> = ({ onNavigate }) => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h1 className="text-4xl font-heading font-bold text-slate-900 mb-4">Real Stories, Real Growth</h1>
-                    <p className="text-xl text-slate-600">See how Qualisa is transforming careers and helping businesses build dream teams.</p>
+                    <p className="text-xl text-slate-600">See how qalisa is transforming careers and helping businesses build dream teams.</p>
                 </div>
 
                 {/* Talent Stories */}
@@ -199,7 +199,7 @@ export const SuccessStories: React.FC<StaticPageProps> = ({ onNavigate }) => {
                             </div>
                         </div>
                         <p className="text-slate-600 italic mb-6">
-                            "Before Qualisa, I spent 50% of my time looking for clients. Now, the clients come to me. The mentorship program helped me refine my portfolio, and I doubled my hourly rate in 6 months."
+                            "Before qalisa, I spent 50% of my time looking for clients. Now, the clients come to me. The mentorship program helped me refine my portfolio, and I doubled my hourly rate in 6 months."
                         </p>
                         <div className="flex gap-2 text-sm font-medium text-green-600">
                             <TrendingUp className="w-4 h-4" /> 2x Income Growth
@@ -228,7 +228,7 @@ export const SuccessStories: React.FC<StaticPageProps> = ({ onNavigate }) => {
                 <div className="grid md:grid-cols-3 gap-6">
                     {[
                         { company: "TechFlow", role: "SaaS Startup", quote: "Hired a lead developer in 48 hours. The pre-vetting saved us weeks of interviews." },
-                        { company: "CreativeStudio", role: "Agency", quote: "We scale our design team up and down seasonally using Qualisa. The quality is consistent." },
+                        { company: "CreativeStudio", role: "Agency", quote: "We scale our design team up and down seasonally using qalisa. The quality is consistent." },
                         { company: "GreenEarth", role: "Non-Profit", quote: "Found an amazing grant writer who understood our mission perfectly." },
                     ].map((story, i) => (
                         <div key={i} className="bg-slate-900 text-white p-8 rounded-2xl shadow-lg">
@@ -281,7 +281,7 @@ export const Resources: React.FC<StaticPageProps> = ({ onNavigate }) => {
                             <HelpCircle className="w-6 h-6" />
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-2">Platform Guide</h3>
-                        <p className="text-slate-600 mb-4">Learn how to make the most of Qualisa.</p>
+                        <p className="text-slate-600 mb-4">Learn how to make the most of qalisa.</p>
                         <span className="text-orange-600 font-bold text-sm flex items-center gap-2">View Guide <ArrowRight className="w-4 h-4"/></span>
                     </div>
                 </div>
@@ -348,7 +348,7 @@ export const HowItWorks: React.FC<StaticPageProps> = ({ onNavigate }) => {
             Product Walkthrough
         </div>
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-          How Qualisa Works
+          How qalisa Works
         </h1>
         <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
           A simple, guided process for talent to grow and for businesses to hire verified professionals.
@@ -461,7 +461,7 @@ export const HowItWorks: React.FC<StaticPageProps> = ({ onNavigate }) => {
 
              <div className="relative z-10">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-heading font-bold mb-4">Why Qualisa?</h2>
+                    <h2 className="text-3xl font-heading font-bold mb-4">Why qalisa?</h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">We are building a fairer, more supportive ecosystem for the future of work.</p>
                 </div>
 
@@ -538,7 +538,7 @@ export const PrivacyPolicy: React.FC<StaticPageProps> = ({ onNavigate }) => (
             <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Contact Us</h3>
                 <p className="text-slate-600 text-sm">
-                    If you have questions about this policy, please contact us at <span className="text-brand-600 font-medium">privacy@qualisa.com</span>.
+                    If you have questions about this policy, please contact us at <span className="text-brand-600 font-medium">privacy@qalisa.com</span>.
                 </p>
             </section>
         </div>
@@ -564,7 +564,7 @@ export const TermsOfService: React.FC<StaticPageProps> = ({ onNavigate }) => (
              <section>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">1. Acceptance of Terms</h3>
                 <p className="text-slate-600 leading-relaxed">
-                    By accessing or using Qualisa, you agree to be bound by these Terms. If you do not agree to these Terms, you may not use the Service.
+                    By accessing or using qalisa, you agree to be bound by these Terms. If you do not agree to these Terms, you may not use the Service.
                 </p>
             </section>
 
@@ -578,7 +578,7 @@ export const TermsOfService: React.FC<StaticPageProps> = ({ onNavigate }) => (
             <section>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">3. Payments & Services</h3>
                 <p className="text-slate-600 leading-relaxed">
-                    Qualisa acts as a facilitator for payments between Clients and Talent. We charge a service fee on completed transactions. All payments are processed via secure third-party providers. Refunds are handled according to our dispute resolution policy.
+                    qalisa acts as a facilitator for payments between Clients and Talent. We charge a service fee on completed transactions. All payments are processed via secure third-party providers. Refunds are handled according to our dispute resolution policy.
                 </p>
             </section>
 
@@ -592,7 +592,7 @@ export const TermsOfService: React.FC<StaticPageProps> = ({ onNavigate }) => (
             <section>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">5. Disclaimer</h3>
                 <p className="text-slate-600 leading-relaxed">
-                    The Service is provided on an "AS IS" and "AS AVAILABLE" basis. Qualisa makes no warranties regarding the reliability or accuracy of user-generated content or the quality of services provided by Talent.
+                    The Service is provided on an "AS IS" and "AS AVAILABLE" basis. qalisa makes no warranties regarding the reliability or accuracy of user-generated content or the quality of services provided by Talent.
                 </p>
             </section>
         </div>

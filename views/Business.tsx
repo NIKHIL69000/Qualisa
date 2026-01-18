@@ -341,7 +341,7 @@ export const Business: React.FC = () => {
                         Hire the Top 1% of Verified Talent
                     </h1>
                     <p className="text-slate-300 text-lg md:text-xl mb-10 leading-relaxed">
-                        Skip the noise. Qualisa pre-vets every professional for hard skills and soft skills.
+                        Skip the noise. qalisa pre-vets every professional for hard skills and soft skills.
                         Post your job today and find the perfect match in hours, not weeks.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

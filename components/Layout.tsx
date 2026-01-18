@@ -13,47 +13,59 @@ interface FooterProps {
 
 // Optimized SVG Logo Component
 export const QualisaLogo: React.FC<{ className?: string, colored?: boolean }> = ({ className = "h-8", colored = true }) => (
-  <svg viewBox="0 0 150 40" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="Qualisa Logo">
+  <svg viewBox="0 0 160 50" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="qalisa Logo">
     <defs>
       <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#14b8a6" /> {/* brand-500 (Teal) */}
-        <stop offset="100%" stopColor="#06b6d4" /> {/* cyan-500 (Aqua) */}
+        <stop offset="0%" stopColor="#2dd4bf" /> {/* teal-400 */}
+        <stop offset="100%" stopColor="#0f766e" /> {/* teal-700 */}
       </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="2" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
     </defs>
     
-    {/* Symbol: Abstract Swirl Q */}
-    <g transform="translate(4, 4)">
-       {/* Main Arc */}
+    {/* Abstract Ribbon Swirl Icon - Based on the image provided */}
+    <g transform="translate(5, 5)">
+       {/* Ribbon 1 - Top Swoosh */}
        <path 
-         d="M24 8 C15.16 8 8 15.16 8 24 C8 29 11 32 14 34" 
+         d="M5 25 Q 15 5, 35 15" 
+         stroke={colored ? "url(#logoGradient)" : "currentColor"} 
+         strokeWidth="4" 
+         strokeLinecap="round" 
+         fill="none"
+         opacity="0.9"
+       />
+       {/* Ribbon 2 - Middle/Main Swoosh */}
+       <path 
+         d="M0 32 Q 15 15, 40 25" 
          stroke={colored ? "url(#logoGradient)" : "currentColor"} 
          strokeWidth="5" 
          strokeLinecap="round" 
          fill="none"
        />
-       {/* Swirl Tail */}
+       {/* Ribbon 3 - Bottom Swoosh */}
        <path 
-         d="M12 28 C16 34 26 36 32 26" 
+         d="M10 40 Q 30 45, 45 30" 
          stroke={colored ? "url(#logoGradient)" : "currentColor"} 
-         strokeWidth="5" 
+         strokeWidth="4" 
          strokeLinecap="round" 
          fill="none"
+         opacity="0.8"
        />
-       {/* Top Dot/Accent */}
-       <circle cx="28" cy="10" r="3" fill={colored ? "url(#logoGradient)" : "currentColor"} />
     </g>
     
-    {/* Typography: 'qualisa' - Modern, Geometric, Lowercase */}
+    {/* Typography: 'qalisa' - Lowercase, Modern Rounded Sans */}
     <text 
-      x="44" 
-      y="29" 
-      fontFamily="'Poppins', 'Inter', sans-serif" 
-      fontWeight="700" 
-      fontSize="26" 
+      x="55" 
+      y="35" 
+      fontFamily="'Poppins', sans-serif" 
+      fontWeight="600" 
+      fontSize="34" 
       fill={colored ? "url(#logoGradient)" : "currentColor"}
       style={{ letterSpacing: '-0.03em' }}
     >
-      qualisa
+      qalisa
     </text>
   </svg>
 );
@@ -231,7 +243,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
         
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-          <p>© 2024 QUALISA. All rights reserved.</p>
+          <p>© 2024 qalisa. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {/* Social icons placeholders */}
             <span className="cursor-pointer hover:text-white transition-colors">Twitter</span>

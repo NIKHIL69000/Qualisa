@@ -18,7 +18,7 @@ const data = [
 export const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'coach'>('overview');
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { id: '1', role: 'model', text: 'Hi! I am your Qualisa Growth Coach. How can I help you improve your career today?', timestamp: new Date() }
+    { id: '1', role: 'model', text: 'Hi! I am your qalisa Growth Coach. How can I help you improve your career today?', timestamp: new Date() }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -176,7 +176,7 @@ export const Dashboard: React.FC = () => {
                   <Bot size={20} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900">Qualisa Coach</h3>
+                  <h3 className="font-bold text-slate-900">qalisa Coach</h3>
                   <p className="text-xs text-brand-600 font-medium">Powered by Gemini 3 Flash</p>
                 </div>
               </div>

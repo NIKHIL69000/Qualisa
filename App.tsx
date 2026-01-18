@@ -14,7 +14,7 @@ const AuthPage: React.FC<{ type: 'LOGIN' | 'SIGNUP'; onNavigate: (v: ViewState) 
   <div className="min-h-screen pt-20 flex items-center justify-center bg-slate-50 px-4">
     <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 w-full max-w-md">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold font-heading text-slate-900">{type === 'LOGIN' ? 'Welcome Back' : 'Join Qualisa'}</h2>
+        <h2 className="text-2xl font-bold font-heading text-slate-900">{type === 'LOGIN' ? 'Welcome Back' : 'Join qalisa'}</h2>
         <p className="text-slate-500 mt-2">
           {type === 'LOGIN' ? 'Access your growth dashboard' : 'Start your career acceleration journey'}
         </p>

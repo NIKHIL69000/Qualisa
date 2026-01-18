@@ -81,7 +81,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed">
-            QUALISA isn't just a marketplace. It's a growth ecosystem where verified talent meets premium opportunities, backed by career mentorship and visibility tools.
+            qalisa isn't just a marketplace. It's a growth ecosystem where verified talent meets premium opportunities, backed by career mentorship and visibility tools.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -133,7 +133,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">How Qualisa Works</h2>
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">How qalisa Works</h2>
             <p className="text-slate-600 max-w-xl mx-auto">We bridge the gap between skill acquisition and career monetization.</p>
           </div>
 
@@ -214,7 +214,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <span className="text-brand-400">A growth ecosystem.</span>
               </h2>
               <p className="text-slate-300 text-lg mb-8">
-                Typical platforms leave you to fight for the lowest bid. Qualisa invests in your growth, ensuring businesses get premium talent and you get paid what you're worth.
+                Typical platforms leave you to fight for the lowest bid. qalisa invests in your growth, ensuring businesses get premium talent and you get paid what you're worth.
               </p>
               
               <ul className="space-y-4">
@@ -247,7 +247,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <span className="text-slate-400">Feature</span>
                     <div className="flex gap-8 text-sm font-bold">
                       <span className="text-slate-500">Others</span>
-                      <span className="text-brand-400">QUALISA</span>
+                      <span className="text-brand-400">qalisa</span>
                     </div>
                   </div>
                   {[
