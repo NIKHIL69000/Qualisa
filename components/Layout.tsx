@@ -13,57 +13,75 @@ interface FooterProps {
 
 // Optimized SVG Logo Component
 export const QualisaLogo: React.FC<{ className?: string, colored?: boolean }> = ({ className = "h-8", colored = true }) => (
-  <svg viewBox="0 0 160 50" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="qalisa Logo">
+  <svg viewBox="0 0 170 55" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="qalisa Logo">
     <defs>
-      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#2dd4bf" /> {/* teal-400 */}
-        <stop offset="100%" stopColor="#0f766e" /> {/* teal-700 */}
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#5eead4" /> {/* brand-300 (Light Teal/Cyan highlight) */}
+        <stop offset="40%" stopColor="#2dd4bf" /> {/* brand-400 (Teal mid-tone) */}
+        <stop offset="100%" stopColor="#0f766e" /> {/* brand-700 (Dark Teal shadow) */}
       </linearGradient>
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="2" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      
+      {/* Premium Glossy Filter */}
+      <filter id="premiumGloss" x="-20%" y="-20%" width="140%" height="140%">
+         {/* 1. Soft Blur for smoothness */}
+         <feGaussianBlur in="SourceAlpha" stdDeviation="0.5" result="blur"/>
+         
+         {/* 2. Specular Lighting for 3D Shine */}
+         <feSpecularLighting in="blur" surfaceScale="2" specularConstant="0.8" specularExponent="15" lightingColor="#ffffff" result="specOut">
+           <fePointLight x="-50" y="-100" z="200"/>
+         </feSpecularLighting>
+         <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+         
+         {/* 3. Composite Light + Graphic */}
+         <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litGraphic"/>
+         
+         {/* 4. Drop Shadow for depth */}
+         <feDropShadow dx="0" dy="2" stdDeviation="1.5" floodColor="#0f766e" floodOpacity="0.3"/>
       </filter>
     </defs>
     
-    {/* Abstract Ribbon Swirl Icon - Based on the image provided */}
-    <g transform="translate(5, 5)">
-       {/* Ribbon 1 - Top Swoosh */}
+    <g transform="translate(5, 5)" filter={colored ? "url(#premiumGloss)" : ""}>
+       {/* Symbol: Abstract Ribbon Swirl - Refined for smoothness */}
+       {/* Ribbon 1: Bottom Swoosh */}
        <path 
-         d="M5 25 Q 15 5, 35 15" 
+         d="M5 38 Q 20 45, 45 32" 
          stroke={colored ? "url(#logoGradient)" : "currentColor"} 
-         strokeWidth="4" 
+         strokeWidth="6" 
          strokeLinecap="round" 
          fill="none"
-         opacity="0.9"
        />
-       {/* Ribbon 2 - Middle/Main Swoosh */}
+       
+       {/* Ribbon 2: Top Swoosh/Loop */}
        <path 
-         d="M0 32 Q 15 15, 40 25" 
+         d="M5 25 Q 15 5, 40 18" 
+         stroke={colored ? "url(#logoGradient)" : "currentColor"} 
+         strokeWidth="6" 
+         strokeLinecap="round" 
+         fill="none"
+       />
+       
+       {/* Ribbon 3: Connecting Middle Flow */}
+       <path 
+         d="M10 32 Q 25 25, 40 28" 
          stroke={colored ? "url(#logoGradient)" : "currentColor"} 
          strokeWidth="5" 
          strokeLinecap="round" 
          fill="none"
-       />
-       {/* Ribbon 3 - Bottom Swoosh */}
-       <path 
-         d="M10 40 Q 30 45, 45 30" 
-         stroke={colored ? "url(#logoGradient)" : "currentColor"} 
-         strokeWidth="4" 
-         strokeLinecap="round" 
-         fill="none"
-         opacity="0.8"
+         opacity="0.95"
        />
     </g>
     
-    {/* Typography: 'qalisa' - Lowercase, Modern Rounded Sans */}
+    {/* Typography: qalisa */}
+    {/* Using 'Poppins' with tight tracking and 3D gradient fill to match the provided image */}
     <text 
-      x="55" 
-      y="35" 
+      x="60" 
+      y="40" 
       fontFamily="'Poppins', sans-serif" 
-      fontWeight="600" 
-      fontSize="34" 
+      fontWeight="700" 
+      fontSize="38" 
       fill={colored ? "url(#logoGradient)" : "currentColor"}
-      style={{ letterSpacing: '-0.03em' }}
+      style={{ letterSpacing: '-0.04em' }}
+      filter={colored ? "url(#premiumGloss)" : ""}
     >
       qalisa
     </text>
